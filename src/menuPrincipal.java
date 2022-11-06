@@ -7,13 +7,21 @@ public class menuPrincipal {
 
     void generarComponentes () {
         JFrame interfazPrincipal = new JFrame();
-            interfazPrincipal.setSize(600, 400);
-            interfazPrincipal.setVisible(true);
-            interfazPrincipal.setLayout(null);
         JPanel panelPrincipal = new JPanel();
-            panelPrincipal.setSize(600, 400);
-            panelPrincipal.setVisible(true);
-            panelPrincipal.setBackground(base);
+        JLabel texto = new JLabel("Menu Principal \n Open Academic");
+
+        interfazPrincipal.setSize(600, 400);
+        interfazPrincipal.setVisible(true);
+        interfazPrincipal.setLayout(null);
+        
+        panelPrincipal.setSize(600, 400);
+        panelPrincipal.setVisible(true);
+        panelPrincipal.setBackground(base);
+        
+        texto.setForeground(pink);
+        
         interfazPrincipal.add(panelPrincipal);
+        panelPrincipal.add(texto);
+
     }
 }

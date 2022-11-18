@@ -1,33 +1,49 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class menuPrincipal {
-    static Color base = new Color(36, 39, 58);
-    static Color pink = new Color(245, 189, 230);
-    static Color text = new Color(202, 211, 245);
+public class MenuPrincipal extends JFrame implements ActionListener {
+    Color base = new Color(36, 39, 58);
+    Color text = new Color(202, 211, 245);
 
-    void generarComponentes () {
-        JFrame interfazPrincipal = new JFrame();
-        JPanel panelPrincipal = new JPanel();
-        JComboBox menu = new JComboBox();
-        JButton Ingreso = new JButton("Ingresar");
-        JLabel texto = new JLabel("Menu Principal \n Open Academic");
+    private JLabel l;
+    private JButton b;
+    private JComboBox Cb;
 
-        interfazPrincipal.setSize(1440, 1024);
-        interfazPrincipal.setVisible(true);
-        interfazPrincipal.setLayout(null);
-        
-        panelPrincipal.setSize(1440, 1024);
-        panelPrincipal.setVisible(true);
-        panelPrincipal.setBackground(base);
+    public MenuPrincipal() {
+        setLayout(null);
+        setBounds(50, 50, 600, 400);
+        setTitle("Menu Principal");
+        setResizable(false);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setAlwaysOnTop(false);
+        getContentPane().setBackground(base);
+        setVisible(true);
 
-        menu.setVisible(true);
-        
-        texto.setForeground(text);
-        texto.setBounds(50, 100, 100, 30);
+        l = new JLabel("Menu Principal", SwingConstants.CENTER);
+        l.setBounds(226,87,149,46);
+        l.setForeground(text);
+        l.setFont(new Font("JetBrains Mono", Font.PLAIN, 16));
+        add(l);
 
-        interfazPrincipal.add(panelPrincipal);
-        panelPrincipal.add(texto);
-        panelPrincipal.add(menu);
+        Cb = new JComboBox<>();
+        Cb.setBounds(157,180,287,41);
+        add(Cb);
+
+        b = new JButton("Ingresar");
+        b.setBounds(226,259,148,41);
+        b.addActionListener(this);
+        l.setForeground(text);
+        l.setFont(new Font("JetBrains Mono", Font.PLAIN, 16));
+        add(b);
+    }
+
+    public void actionPerformed(ActionEvent e){
+        if (e.getSource()==b){
+            
+        }
+    }
+    public static void main(String[] args) {
+        new MenuPrincipal();
     }
 }

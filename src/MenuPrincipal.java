@@ -5,7 +5,7 @@ import java.awt.event.*;
 public class MenuPrincipal extends JFrame implements ActionListener{
     Color base = new Color(36, 39, 58);
     Color text = new Color(202, 211, 245);
-    Color surface = new Color(73, 77, 100);
+    Color surface1 = new Color(73, 77, 100);
 
     private JLabel l;
     private JButton b;
@@ -30,7 +30,7 @@ public class MenuPrincipal extends JFrame implements ActionListener{
         Cb.addItem("Academias");
         Cb.addItem("Listado de Academias");
         Cb.setFont(new Font("JetBrains Mono", Font.BOLD, 14));
-        Cb.setBackground(surface);
+        Cb.setBackground(surface1);
         Cb.setForeground(text);
         Cb.setBounds(157,180,287,41);
         add(Cb);

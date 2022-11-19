@@ -11,6 +11,6 @@ public class subtexto extends JLabel{
     public subtexto (String texto){
         setText(texto);
         setForeground(text);
-        setFont(new Font("JetBrains Mono", Font.PLAIN, 12));
+        setFont(new Font("JetBrains Mono", Font.BOLD, 12));
     }
 }

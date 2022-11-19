@@ -20,29 +20,24 @@ public class MenuPrincipal extends JFrame implements ActionListener{
         setAlwaysOnTop(false);
         getContentPane().setBackground(base);
         
-        l = new JLabel("Menu Principal", SwingConstants.CENTER);
+        l = new components.titulo("Menu Principal");
         l.setBounds(226,87,149,46);
-        l.setForeground(text);
-        l.setFont(new Font("JetBrains Mono", Font.PLAIN, 16));
         add(l);
         
         Cb = new JComboBox<String>();
         Cb.addItem("Escoja una opción");
         Cb.addItem("Programas Academicos");
         Cb.addItem("Academias");
-        Cb.addItem("Cursos");
+        Cb.addItem("Listado de Academias");
         Cb.setFont(new Font("JetBrains Mono", Font.BOLD, 14));
         Cb.setBackground(surface);
         Cb.setForeground(text);
         Cb.setBounds(157,180,287,41);
         add(Cb);
         
-        b = new JButton("Ingresar");
+        b = new components.boton("Ingresar");
         b.setBounds(226,259,148,41);
         b.addActionListener(this);
-        b.setBackground(surface);
-        b.setForeground(text);
-        b.setFont(new Font("JetBrains Mono", Font.PLAIN, 16));
         add(b);
         setVisible(true);
     }
@@ -57,11 +52,13 @@ public class MenuPrincipal extends JFrame implements ActionListener{
                     break;
 
                 case 2:
-
+                    setVisible(false);
+                    new Academias();
                     break;
 
                 case 3:
-
+                    setVisible(false);
+                    new ListaAcademias();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Seleccione una opcion valida");

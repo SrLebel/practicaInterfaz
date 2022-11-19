@@ -12,6 +12,7 @@ public class radioboton extends JRadioButton {
     public radioboton (String texto){
         setText(texto);
         setForeground(text);
+        setBackground(base);
         setFont(new Font("JetBrains Mono", Font.BOLD, 10));
     }
 }

@@ -36,7 +36,7 @@ public class MenuPrincipal extends JFrame implements ActionListener{
         add(Cb);
         
         b = new components.boton("Ingresar");
-        b.setBounds(226,259,148,41);
+        b.setBounds(226,259,148,40);
         b.addActionListener(this);
         add(b);
         setVisible(true);
@@ -47,17 +47,17 @@ public class MenuPrincipal extends JFrame implements ActionListener{
         if (e.getSource()==b){
             switch (seleccion) {
                 case 1:
-                    setVisible(false);
+                    dispose();
                     new ProgramasAcademicos();
                     break;
 
                 case 2:
-                    setVisible(false);
+                    dispose();
                     new Academias();
                     break;
 
                 case 3:
-                    setVisible(false);
+                    dispose();
                     new ListaAcademias();
                     break;
                 default:

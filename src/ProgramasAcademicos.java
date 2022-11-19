@@ -19,26 +19,44 @@ public class ProgramasAcademicos extends JFrame implements ActionListener{
         setAlwaysOnTop(false);
         getContentPane().setBackground(base);
 
+        // Labels
         l = new components.titulo("Creación de Programa Academico");
         nom = new components.subtexto("Nombre");
         cod = new components.subtexto("Codigo");
         cred = new components.subtexto("Creditos");
         acred = new components.subtexto("Acreditada");
 
+        // JTextFields
         nombre = new components.campotexto();
         codigo = new components.campotexto();
         creditos = new components.campotexto();
 
-        si = new components.radioboton("No");
+        // JRadioButtons
+        si = new components.radioboton("Si");
         no = new components.radioboton("No");
 
+        // JButtons
         Ingresar = new components.boton("Registar");
         Volver = new components.boton("Volver");
 
         l.setBounds(150,30,400,20);
         nom.setBounds(180, 70, 100, 20);
+        cod.setBounds(180, 130, 100, 20);
+        cred.setBounds(180, 190, 100, 20);
+        acred.setBounds(180, 250, 100, 20);
 
         nombre.setBounds(170,90,220,30);
+        codigo.setBounds(170, 150, 220, 30);
+        creditos.setBounds(170, 210, 220, 30);
+
+        si.setBounds(170, 270, 50, 20);
+        no.setBounds(230, 270, 50, 20);
+
+        Ingresar.setBounds(130, 300, 150, 40);
+        Volver.setBounds(280, 300, 150, 40);
+
+        Ingresar.addActionListener(this);
+        Volver.addActionListener(this);
 
         add(l);
         add(nom);
@@ -57,6 +75,13 @@ public class ProgramasAcademicos extends JFrame implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e){
+        if(e.getSource()==Ingresar){
 
+        }
+
+        if (e.getSource()==Volver){
+            dispose();
+            new MenuPrincipal();
+        }
     }
 }

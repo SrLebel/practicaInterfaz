@@ -2,6 +2,7 @@ package View;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import Model.ProgramaAcademico;
 
 public class ProgramasAcademicos extends JFrame implements ActionListener{
     Color base = new Color(36, 39, 58);
@@ -80,7 +81,20 @@ public class ProgramasAcademicos extends JFrame implements ActionListener{
 
     public void actionPerformed(ActionEvent e){
         if(e.getSource()==Ingresar){
-            
+            ProgramaAcademico objeto = new ProgramaAcademico();
+            String Acreditado = "";
+            if(si.isSelected()){
+                Acreditado = "si";
+            }
+            if(no.isSelected()){
+                Acreditado = "no";
+            }
+            objeto.subirData(
+                nombre.getText(),
+                codigo.getText(),
+                creditos.getText(),
+                Acreditado
+            );
         }
 
         if (e.getSource()==Volver){

@@ -30,6 +30,7 @@ public class MenuPrincipal extends JFrame implements ActionListener{
         Cb.addItem("Programas Academicos");
         Cb.addItem("Academias");
         Cb.addItem("Listado de Academias");
+        Cb.addItem("Listado de Programas");
         Cb.setFont(new Font("JetBrains Mono", Font.BOLD, 14));
         Cb.setBackground(surface1);
         Cb.setForeground(text);
@@ -60,6 +61,10 @@ public class MenuPrincipal extends JFrame implements ActionListener{
                 case 3:
                     dispose();
                     new ListaAcademias();
+                    break;
+                case 4:
+                    dispose();
+                    new ListaProgramas();
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Seleccione una opcion valida");

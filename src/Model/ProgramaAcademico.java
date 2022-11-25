@@ -46,7 +46,6 @@ public class ProgramaAcademico {
             info[0]=sc.nextLine();
             info[1]=sc.nextLine();
             info[2]=sc.nextLine();
-            info[3]=sc.nextLine();
             sc.close();
         } catch (Exception e){
 

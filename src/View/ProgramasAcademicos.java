@@ -1,3 +1,4 @@
+package View;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -20,11 +21,11 @@ public class ProgramasAcademicos extends JFrame implements ActionListener{
         getContentPane().setBackground(base);
 
         // Labels
-        l = new components.titulo("Creación de Programa Academico");
-        nom = new components.subtexto("Nombre");
-        cod = new components.subtexto("Codigo");
-        cred = new components.subtexto("Creditos");
-        acred = new components.subtexto("Acreditada");
+        l = new View.Components.titulo("Creación de Programa Academico");
+        nom = new View.Components.subtexto("Nombre");
+        cod = new View.Components.subtexto("Codigo");
+        cred = new View.Components.subtexto("Creditos");
+        acred = new View.Components.subtexto("Acreditada");
 
         l.setBounds(150,30,400,20);
         nom.setBounds(180, 70, 100, 20);
@@ -33,9 +34,9 @@ public class ProgramasAcademicos extends JFrame implements ActionListener{
         acred.setBounds(180, 250, 100, 20);
 
         // JTextFields
-        nombre = new components.campotexto();
-        codigo = new components.campotexto();
-        creditos = new components.campotexto();
+        nombre = new View.Components.campotexto();
+        codigo = new View.Components.campotexto();
+        creditos = new View.Components.campotexto();
 
         nombre.setBounds(170,90,220,30);
         codigo.setBounds(170, 150, 220, 30);
@@ -43,8 +44,8 @@ public class ProgramasAcademicos extends JFrame implements ActionListener{
 
         // JRadioButtons
         ButtonGroup grupo = new ButtonGroup();
-        si = new components.radioboton("Si");
-        no = new components.radioboton("No");
+        si = new View.Components.radioboton("Si");
+        no = new View.Components.radioboton("No");
         grupo.add(si);
         grupo.add(no);
 
@@ -52,8 +53,8 @@ public class ProgramasAcademicos extends JFrame implements ActionListener{
         no.setBounds(230, 270, 50, 20);
         
         // JButtons
-        Ingresar = new components.boton("Registar");
-        Volver = new components.boton("Volver");
+        Ingresar = new View.Components.boton("Registar");
+        Volver = new View.Components.boton("Volver");
         
         Ingresar.setBounds(130, 300, 150, 40);
         Volver.setBounds(280, 300, 150, 40);

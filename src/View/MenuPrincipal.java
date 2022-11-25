@@ -1,3 +1,4 @@
+package View;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -20,7 +21,7 @@ public class MenuPrincipal extends JFrame implements ActionListener{
         setAlwaysOnTop(false);
         getContentPane().setBackground(base);
         
-        l = new components.titulo("Menu Principal");
+        l = new View.Components.titulo("Menu Principal");
         l.setBounds(226,87,149,46);
         add(l);
         
@@ -35,7 +36,7 @@ public class MenuPrincipal extends JFrame implements ActionListener{
         Cb.setBounds(157,180,287,41);
         add(Cb);
         
-        b = new components.boton("Ingresar");
+        b = new View.Components.boton("Ingresar");
         b.setBounds(226,259,148,40);
         b.addActionListener(this);
         add(b);

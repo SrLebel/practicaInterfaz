@@ -1,6 +1,8 @@
+package View;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import Model.Academia;
 
 public class Academias extends JFrame implements ActionListener{
     Color base = new Color(36, 39, 58);
@@ -20,13 +22,13 @@ public class Academias extends JFrame implements ActionListener{
         getContentPane().setBackground(base);
 
         //labels
-        CA = new components.titulo("Creación Academia");
-        rs = new components.subtexto("Razon Social"); 
-        dir = new components.subtexto("Direccion"); 
-        acred = new components.subtexto("Acreditada"); 
-        hor = new components.subtexto("Horario de Atención"); 
-        nit = new components.subtexto("NIT"); 
-        anio = new components.subtexto("Año de Fundación");
+        CA = new View.Components.titulo("Creación Academia");
+        rs = new View.Components.subtexto("Razon Social"); 
+        dir = new View.Components.subtexto("Direccion"); 
+        acred = new View.Components.subtexto("Acreditada"); 
+        hor = new View.Components.subtexto("Horario de Atención"); 
+        nit = new View.Components.subtexto("NIT"); 
+        anio = new View.Components.subtexto("Año de Fundación");
         
         CA.setBounds(200,30,400,20);
         rs.setBounds(50, 80, 100, 20);
@@ -37,11 +39,11 @@ public class Academias extends JFrame implements ActionListener{
         anio.setBounds(310, 210, 200, 20);
 
         //TextFields
-        RazonSocial = new components.campotexto();
-        Direccion = new components.campotexto();
-        Horario = new components.campotexto();
-        NIT = new components.campotexto();
-        AnioFundacion = new components.campotexto();
+        RazonSocial = new View.Components.campotexto();
+        Direccion = new View.Components.campotexto();
+        Horario = new View.Components.campotexto();
+        NIT = new View.Components.campotexto();
+        AnioFundacion = new View.Components.campotexto();
 
         RazonSocial.setBounds(40, 100, 220, 30);
         Direccion.setBounds(40, 170, 220, 30);
@@ -51,8 +53,8 @@ public class Academias extends JFrame implements ActionListener{
         
         //RadioButtons
         ButtonGroup grupo = new ButtonGroup();
-        si = new components.radioboton("Si");
-        no = new components.radioboton("No");
+        si = new View.Components.radioboton("Si");
+        no = new View.Components.radioboton("No");
         grupo.add(si);
         grupo.add(no);
 
@@ -60,8 +62,8 @@ public class Academias extends JFrame implements ActionListener{
         no.setBounds(100, 230, 50, 20);
         
         //Botones
-        Ingresar = new components.boton("Registar");
-        Volver = new components.boton("Volver");
+        Ingresar = new View.Components.boton("Registar");
+        Volver = new View.Components.boton("Volver");
 
         Ingresar.setBounds(130, 300, 150, 40);
         Volver.setBounds(280, 300, 150, 40);
@@ -91,7 +93,24 @@ public class Academias extends JFrame implements ActionListener{
 
     public void actionPerformed(ActionEvent e){
         if(e.getSource()==Ingresar){
+            Academia objeto = new Academia();
+
+            String Acreditado = "";
+            if(si.isSelected()){
+                Acreditado = "si";
+            }
+            if(no.isSelected()){
+                Acreditado = "no";
+            }
             
+            objeto.subirData(
+                RazonSocial.getText(),
+                Direccion.getText(),
+                Horario.getText(),
+                NIT.getText(),
+                AnioFundacion.getText(),
+                Acreditado
+            );
         }
 
         if (e.getSource()==Volver){
